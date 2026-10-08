@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Git na Prática | Tarefas da Turma</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="bg-glow"></div>
+  
+  <main class="container">
+    <header class="app-header">
+      <div class="eyebrow-container">
+        <span class="pulse-dot"></span>
+        <p class="eyebrow">OFICINA DE GIT & GITHUB</p>
+      </div>
+      <h1>Minhas tarefas</h1>
+      <p class="subtitle">Adicione tarefas pelo formulário ou <strong>direto no HTML via Pull Request</strong>!</p>
+    </header>
+
+    <!-- Formulário para adicionar tarefas interativamente no navegador -->
+    <form id="task-form">
+      <div class="input-wrapper">
+        <span class="input-icon">✍️</span>
+        <input
+          id="task-input"
+          type="text"
+          placeholder="Digite uma nova tarefa..."
+          autocomplete="off"
+          required
+        >
+      </div>
+      <button type="submit" id="add-btn">
+        <span>Adicionar</span>
+        <span class="btn-icon">+</span>
+      </button>
+    </form>
+
+    <div class="list-meta">
+      <p id="task-counter">0 tarefas cadastradas</p>
+      <button type="button" id="clear-completed" class="btn-text" style="display: none;">Limpar concluídas</button>
+    </div>
+
+    <!-- 
+      ======================================================================
+      📌 ÁREA COLABORATIVA DOS ALUNOS NO HTML
+      Cada aluno pode abrir uma branch, adicionar seu <li> aqui e enviar um PR!
+      
+      MODELO SIMPLES:
+      <li class="task-item" data-author="Seu Nome">
+        Estudar comandos do Git
+      </li>
+
+      MODELO COMPLETO (COM TAG DE AUTOR):
+      <li class="task-item" data-author="Seu Nome">
+        <span class="task-text">Minha nova tarefa aqui</span>
+        <span class="author-tag">@SeuNome</span>
+      </li>
+      ======================================================================
+    -->
+    <ul id="task-list">
+      
+      <!-- Tarefa Exemplo 01 -->
+      <li class="task-item" data-author="Instrutor(a)">
+        <span class="task-text">Clonar o repositório da oficina</span>
+        <span class="author-tag">@Instrutora</span>
+      </li>
+
+      <!-- Tarefa Exemplo 02 -->
+      <li class="task-item" data-author="Aluno Exemplo">
+        <span class="task-text">Criar branch com meu nome e adicionar tarefa no HTML</span>
+        <span class="author-tag">@AlunoDemo</span>
+      </li>
+
+      <!-- [NOVAS TAREFAS DOS ALUNOS SERÃO INSERIDAS AQUI ABAIXO VIA PR] -->
+
+            MODELO SIMPLES:
+      <li class="task-item" data-author="Rafael">
+        Eu testando
+      </li>
+
+    </ul>
+    
+    <div id="empty-state" class="empty-state" style="display: none;">
+      <div class="empty-icon">☕</div>
+      <h3>Tudo limpo por aqui!</h3>
+      <p>Nenhuma tarefa pendente. Adicione algo acima ou diretamente no HTML.</p>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
